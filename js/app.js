@@ -6,10 +6,7 @@ jQuery(document).ready(function dogCatalog() {
     app = Sammy('#main', function () {
         this.get('#/', function () {
             Dogs.randomDog().then(function (randomDog){
-                Dogs.getBreeds().then(function(breeds){
-                    $main.html(Renderer.render('home', {dog: randomDog, list: breeds}));
-                });
-                
+                $main.html(Renderer.render('home', randomDog));
             });
         });
         this.get('#/catalog', function () {
