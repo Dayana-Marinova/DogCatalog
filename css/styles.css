@@ -1,31 +1,33 @@
 body {
     background-image: url("http://www.youwall.com/papel/1d1f3a5b5b.jpg");
+    color: #1a2463;
 }
 
 .category_name_holder {
     border-radius: 50em;
-    padding: 4em;
+    padding: 1em;
     opacity: 0.7;
-    width: 38em;
-    margin-top: 3em;
+    width: 40em;
     background-image: url("https://rosehipvitalcanine.com.au/wp-content/uploads/2012/11/Super_Sausage_Dog.jpg");
 }
 
 .category_name {
-    margin-top: -2em;
     font-style: italic;
     font-family: Serif;
-    color: gold;
 }
 
-.holder{
+.conteiner {
     padding: 4em;
+}
+
+.jumbotron {
+    background: transparent;
 }
 
 .photos_holder {
     position: absolute;
-    height: 39em;
-    width: 48%;
+    height: 36em;
+    width: 44em;
     border-radius: 10em;
     opacity: 0.7;
     background-image: url("https://rosehipvitalcanine.com.au/wp-content/uploads/2012/11/Super_Sausage_Dog.jpg");
@@ -37,17 +39,21 @@ body {
 }
 
 .photo_render {
-    display: inline-block;
-    height: 500px;
+    margin-left: 2em;
+}
+
+.photo {
     width: 500px;
-    border-radius: 25%;
-    background: #e0ae31;
+    height: 440px;
+    border-radius: 20%;
+    background: #ffd89c;
     border-style: double;
     border-width: 1px 5px 2px 19px;
 }
 
-
+/*
 .move_left {
+    display: inline-flex;
     background: #e0ae31;
     margin-top: 12em;
     width: 4em;
@@ -56,6 +62,7 @@ body {
 }
 
 .move_right {
+    display: inline-flex;
     background: #e0ae31;
     margin-top: 12em;
     width: 4em;
