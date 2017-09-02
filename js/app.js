@@ -5,7 +5,9 @@ jQuery(document).ready(function dogCatalog() {
 
     app = Sammy('#main', function () {
         this.get('#/', function () {
-            $main.html(Renderer.render('home'));
+            Dogs.randomDog().then(function (randomDog){
+                $main.html(Renderer.render('home', randomDog));
+            });
         });
     });
 

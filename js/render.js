@@ -16,7 +16,6 @@ var Renderer = (function ($, Handlebars) {
                     }
                 });
             }
-
             return template_cache[template_name](data);
         }
     };
