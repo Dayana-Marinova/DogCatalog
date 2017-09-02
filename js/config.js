@@ -1,0 +1,5 @@
+var dog_api = 'https://dog.ceo/api/'
+var breeds = 'breeds/'
+var random_image = 'image/random'
+var list = 'list'
+var images = 'images'
