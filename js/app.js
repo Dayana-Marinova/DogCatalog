@@ -9,6 +9,14 @@ jQuery(document).ready(function dogCatalog() {
                 $main.html(Renderer.render('home', randomDog));
             });
         });
+        this.get('#/catalog', function () {
+            Catalog.getBreeds().then(function(getBreeds){
+                $main.html(Renderer.render('catalog, getBreeds'));
+            });
+            Catalog.randomDog().then(function(randomDog){
+                $main.html(Renderer.render('catalog', randomDog));
+            });
+        });
     });
 
     app.run('#/');

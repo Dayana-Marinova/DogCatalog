@@ -1,0 +1,20 @@
+{{#each messages}}
+	<div class="col-md-6">
+		<div class="panel panel-default">
+		  <div class="panel-body text-center">
+				<div class="col-md-4">
+					<span class="label label-info"></span>
+				</div>
+				<div class="col-md-8">
+					<h1>{{message}}</h1>
+				</div>
+		  </div>
+			<div class="panel-footer text-right">
+				<button data-movie-id="{{id}}" type="button" class="movie-info btn btn-default" aria-label="Left Align">
+					<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+					More information
+				</button>
+			</div>
+		</div>
+	</div>
+{{/each}}
