@@ -1,0 +1,50 @@
+.catalog_header {
+    color: #f8931f;
+    font-style: italic;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.catalog_container {
+    margin-top: -7em;
+    border-bottom: 0px;
+    border-radius: 20px;
+    background-image: url("https://cdn.pixabay.com/photo/2013/11/28/11/30/paw-print-220231_1280.jpg");
+}
+
+.page-header{
+    border-bottom: none;
+}
+
+.header_container {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #faddb3;
+    border-radius: 20px;
+}
+
+.img_panel {
+    padding: 3px;
+    background: transparent;
+}
+
+.panel-info > .panel-heading {
+    background-color: #a57c50;
+}
+
+.panel-heading {
+    background: #a57c50;
+}
+
+.panel-info {
+    background-color: #faddb3;
+}
+
+.panel-title {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #f8931f;
+    background-color: #a57c50;
+}
+
+.jumbotron {
+    background: transparent;
+    border: none;
+}
