@@ -44,6 +44,7 @@ jQuery(document).ready(function dogCatalog() {
                 };
                 $main.html(Renderer.render('home', data));
                 $('.dog_btn-default').on('click', showBreed);
+                $('.dog_home_btn').on('click', showHome);
             });
         });
         this.get('#/album/:breed', function () {
@@ -58,6 +59,7 @@ jQuery(document).ready(function dogCatalog() {
 
                 }
                 $main.html(Renderer.render('catalog', data));
+                $('.dog_home_btn').on('click', showHome);
                 $('.dog_btn-default').on('click', {br: breed}, showSubBreed);
                 $('.dog_img').on('click', showImage);
             });
@@ -79,8 +81,8 @@ jQuery(document).ready(function dogCatalog() {
 
                 }
                 $main.html(Renderer.render('catalogSub', data));
+                $('.dog_home_btn').on('click', showHome);
                 $('.dog_img').on('click', showImage);
-                $('.dog_home_btn').on('click', showHome)
             });
         });
     });
