@@ -1,7 +1,7 @@
 <div class="catalog_container">
 	<div class="page-header dog_page-header" align="center">
 		<div class="header_container">
-	  		<h1><small class="catalog_header">Album</small></h1>
+	  		<h1><small class="catalog_header">Album: {{breed}}</small></h1>
 	  	</div>
 	</div>
 	<div class="container">
@@ -9,7 +9,7 @@
 	    	<div class="col-xs-12 col-md-12">
 				<div class="panel panel-info dog_panel-info">
 					<div class="panel-heading">
-						<h3 class="panel-title dog_panel-title">Sub-Breeds</h3>
+						<h3 class="panel-title dog_panel-title">Sub-Breeds of {{breed}}</h3>
 					</div>
 					<div class="panel-body">
 						{{#each subBreeds.message as |item|}}
@@ -30,7 +30,7 @@
 			<div class="col-xs-12 col-md-6">
 				<div class="panel panel-info dog_panel-info">
 					<div class="panel-heading">
-						<h3 class="panel-title dog_panel-title">Random dog from current breed</h3>
+						<h3 class="panel-title dog_panel-title">Random dog from current {{breed}}</h3>
 					</div>
 					<div class="panel-body">
 						<div class="img_panel">
@@ -47,15 +47,13 @@
 			<div class="col-xs-12 col-md-12">
 				<div class="panel panel-info dog_panel-info">
 					<div class="panel-heading">
-						<h3 class="panel-title dog_panel-title">Breeds Photos</h3>
+						<h3 class="panel-title dog_panel-title">{{breed}} Photos</h3>
 					</div>
 					<div class="panel-body">
 						{{#each breedImages.message as |item|}}
 							<div class="col-sm-4 dog_box">
 								<div class="dog_image_holder">
-									<a href="{{item}}">
-										<img src="{{item}}" class="dog_img"></img>
-									</a>
+									<img src="{{item}}" class="dog_img"></img>
 								</div>
 							</div>
 						{{/each}}
