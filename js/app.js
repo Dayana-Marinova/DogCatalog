@@ -28,11 +28,9 @@ jQuery(document).ready(function dogCatalog() {
 
     showImage = function(e) {
         var src = e.currentTarget.src;
-        app.setLocation('#/image');
-        var data = { 
-            'src': src
-        };
-        $main.html(Renderer.render('image', data));
+            name = src.split('/').pop();
+            breed = e.data['breed'];
+        app.setLocation('#/image/' + breed + '/' + name);
     }
 
     app = Sammy('#main', function () {
@@ -60,14 +58,18 @@ jQuery(document).ready(function dogCatalog() {
                 }
                 $main.html(Renderer.render('catalog', data));
                 $('.dog_home_btn').on('click', showHome);
-                $('.dog_btn-default').on('click', {br: breed}, showSubBreed);
-                $('.dog_img').on('click', showImage);
+                $('.dog_btn-default').on('click', showSubBreed);
+                $('.dog_img').on('click', data, showImage);
             });
         });
-        this.get('#/image', function () {
-            //var src = this.params.src;
-            //console.log(src)
-            //$main.html(Renderer.render('image', src));
+        this.get('#/image/:breed/:name', function () {
+            var name = this.params.name;
+                breed = this.params.breed;
+                data = { 
+                'name': name,
+                'breed': breed
+                };
+            $main.html(Renderer.render('image', data));
         });
         this.get('#/album/sub/:breed/:sub', function () {
             var breed= this.params.breed;
