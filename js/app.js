@@ -5,16 +5,17 @@ jQuery(document).ready(function dogCatalog() {
 
     app = Sammy('#main', function () {
         this.get('#/', function () {
-            Dogs.randomDog().then(function (randomDog){
-                $main.html(Renderer.render('home', randomDog));
+            $.when(Dogs.randomDog(), Dogs.getBreeds()).done(function(randomDog, breeds){
+                var data = {
+                    'rand': randomDog[0],
+                    'list': breeds[0]
+                }
+                $main.html(Renderer.render('home', data));
             });
         });
         this.get('#/catalog', function () {
-            Catalog.getBreeds().then(function(getBreeds){
-                $main.html(Renderer.render('catalog, getBreeds'));
-            });
-            Catalog.randomDog().then(function(randomDog){
-                $main.html(Renderer.render('catalog', randomDog));
+            Dogs.getBreeds().then(function(breeds){
+                $main.html(Renderer.render('catalog', breeds));
             });
         });
     });
