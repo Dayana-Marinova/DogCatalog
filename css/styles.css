@@ -1,3 +1,29 @@
+.dog_navbar {
+    border-color: #a57c50;
+    background-color: #a57c50;
+}
+
+.dog_navbar-form {
+    background-color: #a57c50;
+}
+
+.dog_container-fluid {
+    background-color: #a57c50;
+    border-color: #a57c50;
+}
+
+.dog_form-control {
+    border-color: #faddb3;
+
+}
+
+.dog_btn-default {
+    background-image: none;
+    background-color: #a57c50;
+    border-color: #faddb3;
+    color: #faddb3;
+}
+
 .catalog_header {
     color: #f8931f;
     font-style: italic;
@@ -11,14 +37,15 @@
     background-image: url("https://cdn.pixabay.com/photo/2013/11/28/11/30/paw-print-220231_1280.jpg");
 }
 
-.page-header{
+.dog_page-header {
     border-bottom: none;
 }
 
 .header_container {
     font-family: "Comic Sans MS", cursive, sans-serif;
     background-color: #faddb3;
-    border-radius: 20px;
+    border-radius: 10px;
+    border: 3px solid #a57c50;
 }
 
 .img_panel {
@@ -34,11 +61,15 @@
     background: #a57c50;
 }
 
-.panel-info {
+.dog_panel-info {
     background-color: #faddb3;
 }
 
-.panel-title {
+.dog_body {
+    background-color: #f8931fb3;
+}
+
+.dog_panel-title {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #f8931f;
     background-color: #a57c50;
