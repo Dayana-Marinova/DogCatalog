@@ -23,6 +23,3 @@ var Catalog = (function ($) {
         }
     };
 })(jQuery);
-
-///api/breed/{breed name}/{sub-breed name}/images
-///api/breed/{breed name}/{sub-breed name}/images/random

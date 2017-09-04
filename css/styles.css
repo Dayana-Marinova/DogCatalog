@@ -95,6 +95,11 @@
     background-color: #faddb3;
 }
 
+.dog_image_panel-info {
+    border: 1em solid #f8931fb3;
+    border-radius: 3em;
+}
+
 .dog_body {
     background-color: #f8931fb3;
 }
