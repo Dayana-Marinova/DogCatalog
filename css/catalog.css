@@ -11,7 +11,7 @@
     background-image: url("https://cdn.pixabay.com/photo/2013/11/28/11/30/paw-print-220231_1280.jpg");
 }
 
-.page-header{
+.dog_page-header {
     border-bottom: none;
 }
 
@@ -34,11 +34,11 @@
     background: #a57c50;
 }
 
-.panel-info {
+.dog_panel-info {
     background-color: #faddb3;
 }
 
-.panel-title {
+.dog_panel-title {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #f8931f;
     background-color: #a57c50;
