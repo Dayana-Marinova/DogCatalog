@@ -16,9 +16,14 @@ var Dogs = (function ($) {
                 url: dog_api + breed + breedName + sep + images
             });
         },
-        getSubBreeds: function(breedName, subBreedName) {
+        getSubBreed: function(breedName, subBreedName) {
             return $.ajax({
                 url: dog_api + breed + breedName + sep + subBreedName + sep + images
+            });
+        },
+        getSubBreeds: function(breedName) {
+            return $.ajax({
+                url: dog_api + breed + breedName + sep + list
             });
         }
     };
