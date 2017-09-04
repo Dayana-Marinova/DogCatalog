@@ -1,7 +1,19 @@
 jQuery(document).ready(function dogCatalog() {
     var $main = jQuery('#main');
+    var $searchForm = jQuery('#search');
 
     var app;
+
+    showHome = function(event) {
+        app.setLocation('#/');
+    }
+
+    searchBreed = function (event) {
+        event.preventDefault();
+
+        var breed = $('#searchBreed').val();
+        app.setLocation('#/album/' + breed);
+    };
 
     showBreed = function(e) {
         var breed = e.currentTarget.innerText;
@@ -68,9 +80,12 @@ jQuery(document).ready(function dogCatalog() {
                 }
                 $main.html(Renderer.render('catalogSub', data));
                 $('.dog_img').on('click', showImage);
+                $('.dog_home_btn').on('click', showHome)
             });
         });
     });
+
+    $searchForm.on('submit', searchBreed);
 
     app.run('#/');
 });
