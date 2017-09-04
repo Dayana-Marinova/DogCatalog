@@ -13,6 +13,15 @@ jQuery(document).ready(function dogCatalog() {
         app.setLocation('#/album/' + breed);
     };
 
+    showImage = function(e) {
+        var src = e.currentTarget.src;
+        app.setLocation('#/image');
+        var data = { 
+            'src': src
+        };
+        $main.html(Renderer.render('image', data));
+    }
+
     app = Sammy('#main', function () {
         this.get('#/', function () {
             $.when(Dogs.randomDog(), Dogs.getBreeds()).done(function(randomDog, breeds){
@@ -37,7 +46,13 @@ jQuery(document).ready(function dogCatalog() {
                 }
                 $main.html(Renderer.render('catalog', data));
                 $('.dog_btn-default').on('click', showSubBreed);
+                $('.dog_img').on('click', showImage);
             });
+        });
+        this.get('#/image', function () {
+            //var src = this.params.src;
+            //console.log(src)
+            //$main.html(Renderer.render('image', src));
         });
     });
 
