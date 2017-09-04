@@ -3,6 +3,14 @@ var Renderer = (function ($, Handlebars) {
         template_ext = '.handlebars',
         template_cache = {};
 
+    Handlebars.registerHelper('if9th', function (index, options) {
+        if(index%9 == 0){
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
+
     return {
         render: function render(template_name, data) {
             if (!template_cache[template_name]) {
