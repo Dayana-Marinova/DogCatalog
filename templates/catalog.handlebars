@@ -4,25 +4,29 @@
 	  		<h1><small class="catalog_header">Album {{breed}}</small></h1>
 	  	</div>
 	</div>
-	<div class="container">
-	    <div class="row dog_row">
-	    	<div class="col-xs-12 col-md-12">
-				<div class="panel panel-info dog_panel-info">
-					<div class="panel-heading">
-						<h3 class="panel-title dog_panel-title">{{breed}} Sub-Breeds</h3>
-					</div>
-					<div class="panel-body">
-						{{#each subBreeds.message as |item|}}
-							<div class="col-xs-12 col-md-1 dog_btn">
+	{{#each subBreeds.message as |item|}}
+		{{#if @first}}
+			<div class="container">
+			    <div class="row dog_row">
+			    	<div class="col-xs-12 col-md-12">
+						<div class="panel panel-info dog_panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title dog_panel-title">{{breed}} Sub-Breeds</h3>
+							</div>
+							<div class="panel-body">
 								<div class="btn-group dog_btn-group" role="group">
-									<button type="button" class="btn btn-default dog_btn-default">{{item}}</button>
+										<button type="button" class="btn btn-default dog_btn-default">{{item}}</button>
+		{{else if @last}}
+										<button type="button" class="btn btn-default dog_btn-default">{{item}}</button>
 								</div>
 							</div>
-						{{/each}}
+						</div>
 					</div>
-				</div>
-			</div>
-	    </div>
+			    </div>
+		{{else}}
+										<button type="button" class="btn btn-default dog_btn-default">{{item}}</button>
+		{{/if}}
+	{{/each}}
 	    <div class="row dog_row">
 	    	<div class="col-xs-12 col-md-6">
 	            <img src="http://4.bp.blogspot.com/-43T3mCL8mbo/UvKeNehiHDI/AAAAAAAAAVw/rp9sMt1XYJk/s1600/4+%25282%2529.png"></img>
