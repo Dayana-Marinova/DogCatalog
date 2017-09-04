@@ -9,8 +9,9 @@ jQuery(document).ready(function dogCatalog() {
     };
 
     showSubBreed = function(e) {
-        var breed = e.currentTarget.innerText;
-        app.setLocation('#/album/' + breed);
+        var breed = e.data.br;
+        var sub = e.currentTarget.innerText;
+        app.setLocation('#/album/sub/' + breed + "/" + sub);
     };
 
     showImage = function(e) {
@@ -45,7 +46,7 @@ jQuery(document).ready(function dogCatalog() {
 
                 }
                 $main.html(Renderer.render('catalog', data));
-                $('.dog_btn-default').on('click', showSubBreed);
+                $('.dog_btn-default').on('click', {br: breed}, showSubBreed);
                 $('.dog_img').on('click', showImage);
             });
         });
@@ -53,6 +54,21 @@ jQuery(document).ready(function dogCatalog() {
             //var src = this.params.src;
             //console.log(src)
             //$main.html(Renderer.render('image', src));
+        });
+        this.get('#/album/sub/:breed/:sub', function () {
+            var breed= this.params.breed;
+            var sub = this.params.sub;
+
+            $.when(Catalog.randomSubDog(breed, sub), Dogs.getSubBreed(breed, sub)).done(function(randomDog, getBreedImages){
+                var data = {
+                    'breed': breed,
+                    'dog': randomDog[0],
+                    'breedImages': getBreedImages[0]
+
+                }
+                $main.html(Renderer.render('catalogSub', data));
+                $('.dog_img').on('click', showImage);
+            });
         });
     });
 
