@@ -1,15 +1,23 @@
 var Catalog = (function ($) {
-    sep = "/catalog";
+    sep = "/";
     return {
-        getBreeds: function() {
+        getSubBreeds: function(breedName) {
             return $.ajax({
-                url: dog_api + breeds + list
+                url: dog_api + breed + breedName + sep + list
             });
         },
-        randomDog: function () {
+        getBreedImages: function (breedName) {
             return $.ajax({
-                url: dog_api + breeds + random_image
+                url: dog_api + breed + breedName + sep + images
+            });
+        },
+        randomDog: function (breedName) {
+            return $.ajax({
+                url: dog_api + breed + breedName + sep + random_images
             });
         }
     };
 })(jQuery);
+
+///api/breed/{breed name}/{sub-breed name}/images
+///api/breed/{breed name}/{sub-breed name}/images/random
