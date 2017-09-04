@@ -32,11 +32,12 @@ jQuery(document).ready(function dogCatalog() {
         this.get('#/breed/:breed', function(){
             var breed = this.params.breed;
 
-            $.when(Dogs.getSubBreeds(breed)).done(function(subBreeds){
-                console.log(subBreeds);
+            $.when(Dogs.getSubBreeds(breed), Dogs.getBreed(breed)).done(function(subBreeds, breedImages){
+                console.log(breedImages);
                 var data = {
-                    'list': subBreeds,
-                    'breed': breed
+                    'list': subBreeds[0],
+                    'breed': breed,
+                    'breedImages': breedImages[0]
                 };
                 $main.html(Renderer.render('breeds', data));
                 $('.dog_btn-default').on('click', showSubBreed);
