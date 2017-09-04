@@ -27,6 +27,13 @@
     color: #faddb3;
 }
 
+.dog_home_btn {
+    margin: 0.6rem;
+    background-image: none;
+    background-color: #a57c50;
+    border-color: #faddb3;
+    color: #faddb3;  
+}
 .catalog_header {
     color: #f8931f;
     font-style: italic;
