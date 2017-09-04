@@ -62,7 +62,7 @@ jQuery(document).ready(function dogCatalog() {
                 }
                 $main.html(Renderer.render('catalog', data));
                 $('.dog_home_btn').on('click', showHome);
-                $('.dog_btn-default').on('click', showSubBreed);
+                $('.dog_btn-default').on('click', { br: breed }, showSubBreed);
                 $('.dog_img').on('click', showImage);
             });
         });
