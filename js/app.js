@@ -25,8 +25,14 @@ jQuery(document).ready(function dogCatalog() {
             });
         });
         this.get('#/catalog', function () {
-            Dogs.getBreeds().then(function(breeds){
-                $main.html(Renderer.render('catalog', breeds));
+            $.when(Catalog.randomDog(), Catalog.getSubBreeds(), Catalog.getBreedImages()).done(function(randomDog, getSubBreeds, getBreedImages){
+                var data = {
+                    'dog': randomDog[0],
+                    'subBreeds': getSubBreeds[0],
+                    'breedImages': getBreedImages[0]
+
+                }
+                $main.html(Renderer.render('catalog', data));
             });
         });
         this.get('#/breed/:breed', function(){
