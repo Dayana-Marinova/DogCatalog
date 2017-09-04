@@ -5,12 +5,12 @@ jQuery(document).ready(function dogCatalog() {
 
     showBreed = function(e) {
         var breed = e.currentTarget.innerText;
-        app.setLocation('#/breed/' + breed);
+        app.setLocation('#/album/' + breed);
     };
 
     showSubBreed = function(e) {
         var breed = e.currentTarget.innerText;
-        app.setLocation('#/breed/' + breed);
+        app.setLocation('#/album/' + breed);
     };
 
     app = Sammy('#main', function () {
@@ -24,35 +24,22 @@ jQuery(document).ready(function dogCatalog() {
                 $('.dog_btn-default').on('click', showBreed);
             });
         });
-        this.get('#/catalog', function () {
-            $.when(Catalog.randomDog(), Catalog.getSubBreeds(), Catalog.getBreedImages()).done(function(randomDog, getSubBreeds, getBreedImages){
+        this.get('#/album/:breed', function () {
+            var breed = this.params.breed;
+
+            $.when(Catalog.randomDog(breed), Catalog.getSubBreeds(breed), Catalog.getBreedImages(breed)).done(function(randomDog, getSubBreeds, getBreedImages){
                 var data = {
+                    'breed': breed,
                     'dog': randomDog[0],
                     'subBreeds': getSubBreeds[0],
                     'breedImages': getBreedImages[0]
 
                 }
                 $main.html(Renderer.render('catalog', data));
-            });
-        });
-        this.get('#/breed/:breed', function(){
-            var breed = this.params.breed;
-
-            $.when(Dogs.getSubBreeds(breed), Dogs.getBreed(breed)).done(function(subBreeds, breedImages){
-                console.log(breedImages);
-                var data = {
-                    'list': subBreeds[0],
-                    'breed': breed,
-                    'breedImages': breedImages[0]
-                };
-                $main.html(Renderer.render('breeds', data));
                 $('.dog_btn-default').on('click', showSubBreed);
             });
         });
     });
-
-
-    
 
     app.run('#/');
 });

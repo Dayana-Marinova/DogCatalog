@@ -1,19 +1,19 @@
 var Catalog = (function ($) {
     sep = "/";
     return {
-        getSubBreeds: function() {
+        getSubBreeds: function(breedName) {
             return $.ajax({
-                url: dog_api + breed + 'sheepdog/' + list
+                url: dog_api + breed + breedName + sep + list
             });
         },
-        getBreedImages: function () {
+        getBreedImages: function (breedName) {
             return $.ajax({
-                url: dog_api + breed + 'sheepdog/' + images
+                url: dog_api + breed + breedName + sep + images
             });
         },
-        randomDog: function () {
+        randomDog: function (breedName) {
             return $.ajax({
-                url: dog_api + breed + 'sheepdog/' + random_images
+                url: dog_api + breed + breedName + sep + random_images
             });
         }
     };
