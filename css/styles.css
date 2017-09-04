@@ -77,6 +77,19 @@
     border-radius: 31px;
 }
 
+.move_left {
+    background-image: none;
+    background-color: #a57c50;
+    border-color: #faddb3;
+    color: #faddb3;
+}
+
+.move_right {
+    background-image: none;
+    background-color: #a57c50;
+    border-color: #faddb3;
+    color: #faddb3;
+}
 
 .img_panel {
     padding: 3px;
