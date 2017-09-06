@@ -44,7 +44,7 @@
     margin-top: -7em;
     border-bottom: 0px;
     border-radius: 20px;
-    background-image: url("https://cdn.pixabay.com/photo/2013/11/28/11/30/paw-print-220231_1280.jpg");
+    background-image: url('../img/paws.jpg');
 }
 
 .dog_page-header {
@@ -94,23 +94,28 @@
 .img_panel {
     padding: 3px;
     background: transparent;
+    border-color: #faddb3;
 }
 
 .panel-info > .panel-heading {
     background-color: #a57c50;
+    border-color: #faddb3;
 }
 
 .panel-heading {
     background: #a57c50;
+    border-color: #faddb3;
 }
 
 .dog_panel-info {
     background-color: #faddb3;
+    border-color: #faddb3;
 }
 
 .dog_image_panel-info {
     border: 1em solid #f8931fb3;
     border-radius: 3em;
+    border-color: #faddb3;
 }
 
 .dog_body {
@@ -119,12 +124,14 @@
 
 .dog_thumbnail {
     background-color: #a57c50;
+    border-color: #faddb3;
 }
 
 .dog_panel-title {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #f8931f;
     background-color: #a57c50;
+    border-color: black;
 }
 
 .jumbotron {
