@@ -102,7 +102,8 @@ jQuery(document).ready(function dogCatalog() {
             id -= 1;
         }
         var data = {
-            'breed': sub,
+            'breed': breed,
+            'sub': sub,
             'dog': breedImages["message"][id],
             'breedImages': breedImages,
             'index': index
@@ -126,6 +127,7 @@ jQuery(document).ready(function dogCatalog() {
         }
         var data = {
             'breed': breed,
+            'sub': sub,
             'dog': breedImages["message"][id],
             'breedImages': breedImages,
             'index': id
@@ -182,7 +184,8 @@ jQuery(document).ready(function dogCatalog() {
 
             $.when(Dogs.getSubBreed(breed, sub)).done(function(getBreedImages){
                 var data = {
-                    'breed': sub,
+                    'breed': breed,
+                    'sub': sub,
                     'dog': getBreedImages["message"][index],
                     'breedImages': getBreedImages,
                     'index': index
