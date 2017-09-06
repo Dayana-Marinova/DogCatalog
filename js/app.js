@@ -3,6 +3,12 @@ jQuery(document).ready(function dogCatalog() {
     var $searchForm = jQuery('#search');
 
     var app;
+    Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+        if(v1 === v2) {
+            return options.fn(this);
+        }
+          return options.inverse(this);
+    });
 
     showHome = function(event) {
         app.setLocation('#/');
