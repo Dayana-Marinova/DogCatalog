@@ -1,4 +1,5 @@
 var Renderer = (function ($, Handlebars) {
+    "use strict";
     var template_dir = 'templates/',
         template_ext = '.handlebars',
         template_cache = {};

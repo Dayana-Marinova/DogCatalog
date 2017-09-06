@@ -1,4 +1,5 @@
 jQuery(document).ready(function dogCatalog() {
+    "use strict";
     var $main = jQuery('#main');
     var $searchForm = jQuery('#search');
 
@@ -10,29 +11,29 @@ jQuery(document).ready(function dogCatalog() {
           return options.inverse(this);
     });
 
-    showHome = function(event) {
+    var showHome = function(event) {
         app.setLocation('#/');
-    }
+    };
 
-    searchBreed = function (event) {
+    var searchBreed = function (event) {
         event.preventDefault();
 
         var breed = $('#searchBreed').val();
         app.setLocation('#/album/' + breed + '/0');
     };
 
-    showBreed = function(e) {
+    var showBreed = function(e) {
         var breed = e.currentTarget.innerText;
         app.setLocation('#/album/' + breed + '/0');
     };
 
-    showSubBreed = function(e) {
+    var showSubBreed = function(e) {
         var breed = e.data.br;
         var sub = e.currentTarget.innerText;
         app.setLocation('#/album/sub/' + breed + "/" + sub + "/0");
     };
 
-    showImage = function(e) {
+    var showImage = function(e) {
         var src = e.currentTarget.src;
         var name = src.split('/').pop();
         var data = { 
@@ -42,7 +43,7 @@ jQuery(document).ready(function dogCatalog() {
         app.setLocation('#/image/' + name);
     };
 
-    previousDog = function(e) {
+    var previousDog = function(e) {
         var index = e.currentTarget.id;
         var id = parseInt(index);
         var breed = e.data.breed;
@@ -67,7 +68,7 @@ jQuery(document).ready(function dogCatalog() {
         $('.move_right').on('click', { list: breedImages, breed: breed, sub: subBreeds }, nextDog);
     };
 
-    nextDog = function(e) {
+    var nextDog = function(e) {
         var index = e.currentTarget.id;
         var id = parseInt(index);
         var breed = e.data.breed;
@@ -92,7 +93,7 @@ jQuery(document).ready(function dogCatalog() {
         $('.move_right').on('click', { list: breedImages, breed: breed, sub: subBreeds }, nextDog);
     };
 
-    previousDogSub = function(e) {
+    var previousDogSub = function(e) {
         var index = e.currentTarget.id;
         var id = parseInt(index);
         var breed = e.data.breed;
@@ -116,7 +117,7 @@ jQuery(document).ready(function dogCatalog() {
         $('.move_right').on('click', { list: breedImages, breed: breed, sub: sub}, nextDogSub);
     };
 
-    nextDogSub = function(e) {
+    var nextDogSub = function(e) {
         var index = e.currentTarget.id;
         var id = parseInt(index);
         var breed = e.data.breed;

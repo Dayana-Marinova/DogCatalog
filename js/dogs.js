@@ -1,5 +1,6 @@
 var Dogs = (function ($) {
-    sep = "/";
+    "use strict";
+    var sep = "/";
     return {
         randomDog: function () {
             return $.ajax({
