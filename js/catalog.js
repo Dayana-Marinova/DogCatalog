@@ -1,5 +1,6 @@
 var Catalog = (function ($) {
-    sep = "/";
+    "use strict";
+    var sep = "/";
     return {
         getSubBreeds: function(breedName) {
             return $.ajax({

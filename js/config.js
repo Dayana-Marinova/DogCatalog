@@ -1,3 +1,4 @@
+"use strict";
 var dog_api = 'https://dog.ceo/api/'
 var breed = 'breed/'
 var breeds = 'breeds/'
