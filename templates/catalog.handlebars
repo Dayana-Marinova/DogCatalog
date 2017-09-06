@@ -6,7 +6,22 @@
 	</div>
 	<div class="container">
 	{{#each subBreeds.message as |item|}}
-		{{#if @first}}
+	    {{#ifCond @first @last}}
+			    <div class="row dog_row">
+			    	<div class="col-xs-12 col-md-12">
+						<div class="panel panel-info dog_panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title dog_panel-title">{{breed}} Sub-Breeds</h3>
+							</div>
+							<div class="panel-body">
+								<div class="btn-group dog_btn-group" role="group">
+										<button type="button" class="btn btn-default dog_btn-default">{{item}}</button>
+								</div>
+							</div>
+						</div>
+					</div>
+			    </div>
+	    {{else if @first}}
 			    <div class="row dog_row">
 			    	<div class="col-xs-12 col-md-12">
 						<div class="panel panel-info dog_panel-info">
@@ -25,7 +40,7 @@
 			    </div>
 		{{else}}
 										<button type="button" class="btn btn-default dog_btn-default">{{item}}</button>
-		{{/if}}
+		{{/ifCond}}
 	{{/each}}
 	    <div class="row dog_row">
 	    	<div class="col-xs-12 col-md-6">
